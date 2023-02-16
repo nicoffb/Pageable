@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "1e59d351-3ebb-469a-b333-a578c463fbb4",
+		"name": "Pageable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23786479"
+	},
+	"item": [
+		{
+			"name": "filtrado id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product/?s=id<10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						""
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "id<10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prueba de filtrado 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product/?s=price<20,releaseDate<2021-09-27,available:true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						""
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "price<20,releaseDate<2021-09-27,available:true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prueba de filtrado 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product/?s=price>20,releaseDate>2021-09-27,available:false,productName:Nantucket Apple Juice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						""
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "price>20,releaseDate>2021-09-27,available:false,productName:Nantucket Apple Juice"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prueba de ordenación",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product/?s=price>20&page=2&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						""
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "price>20"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
